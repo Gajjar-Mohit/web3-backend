@@ -1,0 +1,13 @@
+version: '3'
+services:
+  geth-node-1:
+    image: ethereum/client-go
+    command: --http --http.addr 0.0.0.0 --http.corsdomain "*" --http.api web3,admin,eth,debug,personal,net --http.vhosts "*" --ws --ws.api web3,admin,eth,debug,personal,net --vmdebug --dev
+    # command: --datadir peer2 --networkid 12345 --port 30303 --http --http.addr "172.16.101.232" --http.api "personal,eth,net,web3" --http.port 8545 --bootnodes "enode://2a9320e5dbfc8c196fcd303eb7e0cd0ede7798f726fc768d4d42d713fcda70ac1c4f4d88f03017c5c32e888aa6cbc7663d727fd2b28ad8a7d2acdf69ec779e47@172.16.3.211:30303" console
+    expose:
+      - "8545"
+      - "30303"
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+
