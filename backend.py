@@ -49,3 +49,7 @@ print(f'Transaction hash: {web3.to_hex(tx_hash)}')
 
 get_data = contract.functions.getData(1).call()
 print(get_data)
+
+
+eth. sendTransaction ({from: eth.coinbase, to:”0x86fDC5685b533923e5E7Cd4F7154D692A5643677”, value: web3.toWei(5000, "ether")})
+
